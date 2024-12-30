@@ -8,7 +8,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 class Models:
     @staticmethod
     def get_model(model_name: str, **kwargs) -> BaseLanguageModel:
-        if model_name in ["gpt-4o-mini", "gpt-4", "gpt-3.5-turbo"]:
+        if model_name in ["gpt-4o-mini", "gpt-4", "gpt-3.5-turbo", "llama3.1:8b"]:
             return ChatOpenAI(model_name=model_name, **kwargs)
         elif model_name.startswith("text-"):
             return OpenAI(model_name=model_name, **kwargs)
