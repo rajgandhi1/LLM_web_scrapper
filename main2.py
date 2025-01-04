@@ -167,7 +167,7 @@ def get_page_html(url: str) -> str:
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=False,  # Cloudflare often blocks headless browsers
-            args=['--disable-features=site-per-process']  # Help bypass security features
+            args=['--disable-features=site-per-process', '--no-sandbox', '--disable-setuid-sandbox']  # Help bypass security features
         )
         context = browser.new_context(
             user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -178,14 +178,21 @@ def get_page_html(url: str) -> str:
         try:
             # Add random delay to appear more human-like
             page.wait_for_timeout(random.randint(2000, 5000))
-            page.goto(url, wait_until='networkidle', timeout=30000)
-            
-            # Wait for potential Cloudflare challenge
+            page.goto(url, wait_until='load', timeout=60000)
+
+            # Wait for body to load and check for potential Cloudflare challenge
             page.wait_for_selector('body', timeout=10000)
             
-            # Additional wait if Cloudflare challenge appears
             if page.query_selector('iframe[title*="challenge"]'):
-                page.wait_for_timeout(10000)
+                page.wait_for_timeout(15000)  # Wait longer for challenge
+                page.reload()  # Attempt to reload to pass challenge
+
+            # Interact with possible overlay or modal (if any)
+            try:
+                page.click('button#accept-cookies')  # Example button
+                page.wait_for_timeout(2000)
+            except Exception as e:
+                print(f"No cookie acceptance button: {e}")
             
             html = page.content()
             return html
@@ -278,7 +285,8 @@ def format_product_data(ingredients: str, image_urls: List[str], product_info: D
         "Brand_Name": product_info.get('brand_name', 'N/A'),
         "Variant_Name": product_info.get('variant_name', 'N/A'),
         "Ingredients_List": cleaned_ingredients if cleaned_ingredients else 'N/A',
-        "Product_Images": image_urls if image_urls else []
+        "Product_Images": image_urls if image_urls else [],
+        "Product_url": product_info.get('url', 'N/A')
     }
 
 def construct_product_url(brand: str, product: str, variant: str = "") -> str:
@@ -289,12 +297,12 @@ def construct_product_url(brand: str, product: str, variant: str = "") -> str:
         "farmacy": lambda product, variant: f"https://www.farmacybeauty.com/products/{product.lower().replace(' ', '-').replace('%', '')}" if not variant else f"https://www.farmacybeauty.com/products/{product.lower().replace(' ', '-')}/{variant.lower().replace(' ', '-')}",
         "byoma": lambda product, variant: f"https://byoma.com/product/{product.lower().replace(' ', '-').replace('%', '')}" if not variant else f"https://byoma.com/product/{product.lower().replace(' ', '-')}/{variant.lower().replace(' ', '-')}",
         "minimalist": lambda product, variant: f"https://beminimalist.co/products/{product.lower().replace(' ', '-').replace('%', '')}" if not variant else f"https://beminimalist.co/products/{product.lower().replace(' ', '-')}/{variant.lower().replace(' ', '-')}",
-        "i'm from": lambda product, variant: f"https://beautybarn.in/product/{product.lower().replace(' ', '-').replace('%', '')}",
+        "i'm from": lambda product, variant: f"https://beautybarn.in/product/im-from-{product.lower().replace(' ', '-').replace('%', '')}",
         "haruharu wonder": lambda product, variant: f"https://www.haruharuindia.com/product/{product.lower().replace(' ', '-').replace('%', '')}",
-        "numbuzin": lambda product, variant: f"https://numbuzinus.com/collections/all-products/products/{product.lower().replace(' ', '-').replace('%', '')}",
+        "numbuzin": lambda product, variant: f"https://numbuzinus.com/collections/all-products/products/numbuzin-{product.lower().replace(' ', '-').replace('%', '')}",
         "skin 1004": lambda product, variant: f"https://skin1004.com/products/{product.lower().replace(' ', '-').replace('%', '')}",
         "beauty of joseon": lambda product, variant: f"https://beautyofjoseon.com/products/{product.lower().replace(' ', '-').replace('%', '')}",
-        "cosrx": lambda product, variant: f"https://www.cosrx.com/products/{product.lower().replace(' ', '-')}.replace('%', '')",
+        "cosrx": lambda product, variant: f"https://www.cosrx.com/products/{product.lower().replace(' ', '-').replace('%', '')}",
         "isntree": lambda product, variant: f"https://beautybarn.in/product/isntree-{product.lower().replace(' ', '-').replace('%', '')}",
         "by wishtrend": lambda product, variant: f"https://bywishtrend.com/products/{product.lower().replace(' ', '-').replace('%', '')}",
         "one thing": lambda product, variant: f"https://limese.com/products/one-thing-{product.lower().replace(' ', '-').replace('%', '')}",
@@ -384,7 +392,7 @@ def search_and_extract_ingredients(brand: str, product: str) -> str:
 if __name__ == "__main__":
     csv_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\Products_List2.csv"
     products = read_product_csv(csv_path)
-    output_file_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\crawled_products10.json"
+    output_file_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\crawled_products11.json"
 
     with open(output_file_path, "w") as f:
         json.dump([], f)
