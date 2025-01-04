@@ -198,11 +198,21 @@ def get_page_html(url: str) -> str:
             browser.close()
 
 def scrape_and_query(url: str, question: str):
-    # Get HTML content using Playwright
-    html_content = get_page_html(url)
-    image_urls = extract_images(html_content)
+    """
+    Extract product information, using 'INCI Decoded' content as the primary source for ingredients list,
+    and combining the extracted data into a single final list.
     
-    # Get ingredients using existing scraper
+    Args:
+        url (str): The URL of the product page.
+        question (str): The query to extract ingredients.
+    
+    Returns:
+        Tuple[str, List[str]]: Final ingredients list, image URLs.
+    """
+    # Get HTML content
+    html_content = get_page_html(url)
+
+    # Extract main ingredients using the query
     scraper_config = ScraperConfig(
         use_current_browser=False,
         headless=True,
@@ -217,6 +227,7 @@ def scrape_and_query(url: str, question: str):
     if "Error" in scraped_data:
         return {"Error": scraped_data}, []
 
+    # Query LLM for the first ingredients list
     combined_query = f"""
     From this product page content, extract ONLY the ingredients list:
     {scraped_data}
@@ -224,7 +235,27 @@ def scrape_and_query(url: str, question: str):
     """
     ingredients_response = query_model(combined_query)
 
-    return ingredients_response, image_urls
+    # Extract "INCI Decoded" section
+    soup = BeautifulSoup(html_content, 'html.parser')
+    inci_decoded_section = soup.find(text=lambda t: "INCI Decoded" in t)
+    if inci_decoded_section:
+        parent_tag = inci_decoded_section.find_parent()  # Find parent container for the section
+        if parent_tag:
+            ingredients_response_2 = parent_tag.get_text(separator=" ", strip=True)
+        else:
+            ingredients_response_2 = ""
+    else:
+        ingredients_response_2 = ""
+
+    # Use INCI Decoded as primary list if available
+    final_ingredients_list = (
+        ingredients_response_2 if ingredients_response_2 else ingredients_response
+    )
+
+    # Extract images from the page
+    image_urls = extract_images(html_content)
+
+    return final_ingredients_list, image_urls
 
 def format_product_data(ingredients: str, image_urls: List[str], product_info: Dict) -> Dict:
     # Clean up ingredients string
@@ -302,25 +333,74 @@ def read_product_csv(file_path: str) -> List[Dict]:
     except Exception as e:
         raise Exception(f"Error reading CSV: {str(e)}")
 
+def search_and_extract_ingredients(brand: str, product: str) -> str:
+    """
+    Search the brand website via Bing/Google and extract ingredients list.
+
+    Args:
+        brand (str): The brand name of the product.
+        product (str): The product name.
+
+    Returns:
+        str: Extracted ingredients list or error message.
+    """
+    from googlesearch import search  # Install with `pip install googlesearch-python`
+
+    try:
+        # Construct a query for Google
+        query = f"{brand} {product} ingredients site:.{brand.lower().replace(' ', '')}.com"
+        search_results = list(search(query, num_results=5))
+
+        # Scrape each result for potential ingredient list
+        for result_url in search_results:
+            html_content = get_page_html(result_url)  # Use Playwright to fetch the page content
+            soup = BeautifulSoup(html_content, 'html.parser')
+
+            # Extract from <div>, <table>, <ul>, <ol>
+            potential_ingredients = []
+            for tag in ['div', 'table', 'ul', 'ol']:
+                elements = soup.find_all(tag)
+                for element in elements:
+                    if "ingredient" in element.get_text().lower():
+                        potential_ingredients.append(element.get_text())
+
+            # Pass potential lists to LLM for verification
+            if potential_ingredients:
+                prompt = f"""
+                Verify which of the following sections contains the ingredient list:
+                {potential_ingredients}
+                Return ONLY the ingredient list as a comma-separated string.
+                """
+                verified_ingredients = query_model(prompt)
+                return verified_ingredients
+
+        # If no ingredients are found
+        return "Ingredients not found via search."
+
+    except Exception as e:
+        print(f"Error in search_and_extract_ingredients: {e}")
+        return "Error extracting ingredients."
+    
 if __name__ == "__main__":
     csv_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\Products_List2.csv"
     products = read_product_csv(csv_path)
-    output_file_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\crawled_products9.json"
-    
+    output_file_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\crawled_products10.json"
+
     with open(output_file_path, "w") as f:
         json.dump([], f)
 
     for product in products:
         raw_ingredients, image_urls = scrape_and_query(product['url'], "")
         formatted_data = format_product_data(raw_ingredients, image_urls, product)
-        
+
         with open(output_file_path, "r") as f:
             existing_data = json.load(f)
-        
+
         existing_data.append(formatted_data)
-        
+
         with open(output_file_path, "w") as f:
             json.dump(existing_data, f, indent=4)
-            
+
         print(f"Processed and stored: {product['brand_name']} - {product['product_name']}")
+
 
