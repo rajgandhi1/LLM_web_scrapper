@@ -1,0 +1,689 @@
+{
+    "total_products": 28,
+    "matched_products": 16,
+    "partially_matched_products": 6,
+    "mismatched_products": 5,
+    "missing_ingredients": 1,
+    "detailed_results": [
+        {
+            "product_name": "Laneige - Cica Sleeping Mask",
+            "similarity_score": 0.9333333333333333,
+            "scraped_count": 30,
+            "ground_truth_count": 28,
+            "missing_from_scraped": [
+                "hydrogenated poly(c6-14 olefin)",
+                "butyrospermum parkii (shea) butter",
+                "1,2-hexanediol",
+                "melaleuca alternifolia (tea tree) leaf oil",
+                "tocopherol"
+            ],
+            "extra_in_scraped": [
+                "eau",
+                "hydrogenated poly",
+                "butyrospermum parkii butter",
+                "1",
+                "2-hexanediol",
+                "melaleuca alternifolia leaf oil",
+                "tocopherol."
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Farmacy - green clean whipped foaming cleanser",
+            "similarity_score": 0.12,
+            "scraped_count": 50,
+            "ground_truth_count": 33,
+            "missing_from_scraped": [
+                "cetyl ethylhexanoate",
+                "caprylic/capric triglyceride",
+                "peg-20 glyceryl triisostearate",
+                "peg-10 isostearate",
+                "polyethylene",
+                "echinacea purpurea root extract",
+                "carica papaya (papaya) fruit extract",
+                "moringa pterygosperma seed extract",
+                "moringa oleifera seed oil",
+                "zingiber officinale (ginger) root oil",
+                "helianthus annuus (sunflower) seed oil",
+                "sorbitan sesquioleate",
+                "citrus aurantifolia (lime) oil",
+                "citrus aurantium bergamia (bergamot) fruit oil",
+                "melia azadirachta leaf extract",
+                "melia azadirachta flower extract",
+                "corallina officinalis extract",
+                "citrus aurantium dulcis (orange) peel oil",
+                "amber powder",
+                "cananga odorata flower oil",
+                "coccinia indica fruit extract",
+                "solanum melongena (eggplant) fruit extract",
+                "curcuma longa (turmeric) root extract",
+                "ocimum sanctum leaf extract",
+                "water",
+                "butylene glycol",
+                "disodium phosphate",
+                "citric acid",
+                "phenoxyethanol",
+                "citral"
+            ],
+            "extra_in_scraped": [
+                "water/aqua/eau",
+                "sodium lauroyl isethionate",
+                "sodium cocoyl glycinate",
+                "decyl glucoside",
+                "magnesium aluminum silicate",
+                "sodium lauroyl methyl isethionate",
+                "coconut acid",
+                "sodium lauroamphoacetate",
+                "myristic acid",
+                "sodium lauroyl lactylate",
+                "moringa oleifera leaf water",
+                "sodium pca",
+                "kaolin",
+                "lactobacillus/papaya fruit ferment extract",
+                "moringa oleifera seed extract",
+                "montmorillonite",
+                "citrus limon fruit extract",
+                "quillaja saponaria wood extract",
+                "lauric acid",
+                "cocamide mipa",
+                "sodium isethionate",
+                "xanthan gum",
+                "sodium polyacryloyldimethyl taurate",
+                "sodium benzoate",
+                "palmitic acid",
+                "lactic acid",
+                "illite",
+                "3-hexenol",
+                "beta-caryophyllene",
+                "canarium luzonicum gum nonvolatiles",
+                "citronellal",
+                "citrus aurantifolia fruit extract",
+                "citrus aurantium dulcis fruit extract",
+                "eugenol",
+                "hydroxyacetophenone",
+                "hexenyl acetate",
+                "linalyl acetate",
+                "triethyl citrate",
+                "zingiber officinale extract",
+                "capric acid",
+                "quartz",
+                "saponaria officinalis leaf/root extract",
+                "leuconostoc/radish root ferment filtrate",
+                "gluconolactone",
+                "maltodextrin",
+                "yellow 5",
+                "blue 1"
+            ],
+            "match_status": "MISMATCH"
+        },
+        {
+            "product_name": "numbuzin - No 5 Vitamin-Niacinamide Concentrated Pad",
+            "similarity_score": 0.8695652173913043,
+            "scraped_count": 46,
+            "ground_truth_count": 44,
+            "missing_from_scraped": [
+                "water",
+                "niacinamide",
+                "polyglyceryl-10 laurate",
+                "panthenol (750.1 ppm)",
+                "ammonium acryloyldimethyltaurate/vp copolymer",
+                "citric acid",
+                "1,2 hexanediol",
+                "gardenia florida fruit extract",
+                "tranexamic acid",
+                "tremella fuciformis (mushroom) extract",
+                "disodium edta"
+            ],
+            "extra_in_scraped": [
+                "{ \"ingredients\": \"purified water",
+                "niacinamide (50",
+                "000 ppm)",
+                "polyglyceryl-10laurate",
+                "panthenol",
+                "ammonium acryloyl dimethyl taurate/v picopolymer",
+                "sheet. lyc acid",
+                "1",
+                "2-hexanediol",
+                "gardenia extract",
+                "tranexa mixed acid",
+                "white-throated mushroom extract",
+                "disodium ed ta\" }"
+            ],
+            "match_status": "PARTIAL"
+        },
+        {
+            "product_name": "Paula's Choice - resist perfectly balanced foaming cleanser",
+            "similarity_score": 1.0,
+            "scraped_count": 29,
+            "ground_truth_count": 29,
+            "missing_from_scraped": [
+                "water (aqua)",
+                "helianthus annuus (sunflower) seed oil"
+            ],
+            "extra_in_scraped": [
+                "water",
+                "helianthus annuus seed oil"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "COSRX - Full Fit Propolis Synergy Toner",
+            "similarity_score": 0.9333333333333333,
+            "scraped_count": 15,
+            "ground_truth_count": 14,
+            "missing_from_scraped": [
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "BYOMA - Hydrating Serum",
+            "similarity_score": 0.42857142857142855,
+            "scraped_count": 12,
+            "ground_truth_count": 28,
+            "missing_from_scraped": [
+                "sodium stearoyl glutamate",
+                "ammonium acryloyldimethyltaurate/vp copolymer",
+                "dipropylene glycol",
+                "stearic acid",
+                "oleic acid",
+                "hydroxyacetophenone",
+                "polyglyceryl-4 oleate",
+                "hydroxyethyl acrylate/sodium acryloyldimethyl taurate copolymer",
+                "hydrogenated lecithin",
+                "caprylyl glycol",
+                "lactic acid",
+                "hydrogenated rapeseed alcohol",
+                "sorbitan isostearate",
+                "sodium phytate",
+                "xanthan gum",
+                "caprylhydroxamic acid"
+            ],
+            "extra_in_scraped": [],
+            "match_status": "MISMATCH"
+        },
+        {
+            "product_name": "BYOMA - Brightening Serum",
+            "similarity_score": 0.9615384615384616,
+            "scraped_count": 26,
+            "ground_truth_count": 25,
+            "missing_from_scraped": [
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Laneige - Radian-C Cream",
+            "similarity_score": 0.9333333333333333,
+            "scraped_count": 30,
+            "ground_truth_count": 29,
+            "missing_from_scraped": [
+                "water",
+                "caprylic/ capric triglyceride",
+                "hydrogenated poly (c6-14 olefin)",
+                "1,2-hexanediol",
+                "ammonium acryloyldimethyltaurate/ beheneth-25 methacrylate crosspolymer",
+                "fragrance / parfum",
+                "thymol tri methoxycinnamate"
+            ],
+            "extra_in_scraped": [
+                "water/aqua/eau",
+                "caprylic/capric triglyceride",
+                "hydrogenated poly",
+                "1",
+                "2 hexanediol",
+                "ammonium acryloyldimethyltaurate/beheneth-25 methacrylate crosspolymer",
+                "fragrance/parfum",
+                "thymol trimethoxycinnamate"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Farmacy - honey milk hydrating essence 1",
+            "similarity_score": 0.9285714285714286,
+            "scraped_count": 28,
+            "ground_truth_count": 27,
+            "missing_from_scraped": [
+                "water",
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "water/aqua/eau",
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Minimalist - salicylic acid lha 2 cleanser",
+            "similarity_score": 0.0,
+            "scraped_count": 0,
+            "ground_truth_count": 28,
+            "missing_from_scraped": [
+                "water",
+                "glycerin",
+                "cocamidopropyl betaine",
+                "propanediol",
+                "sodium lauroyl methyl isethionate",
+                "xylitylglucoside",
+                "anhydroxylitol",
+                "xylitol",
+                "peg-150 pentaerythrityl tetrastearate",
+                "peg-120 methyl glucose dioleate",
+                "salicylic acid",
+                "betaine",
+                "avena sativa (oat) kernel extract",
+                "pentylene glycol",
+                "capryloyl salicylic acid",
+                "panthenol",
+                "allantoin",
+                "zinc pca",
+                "sodium pca",
+                "coco-glucoside",
+                "glyceryl oleate",
+                "phenoxyethanol",
+                "ethylhexylglycerin",
+                "trisodium ethylenediamine disuccinate",
+                "lactic acid",
+                "citric acid",
+                "sodium citrate",
+                "sodium hydroxide"
+            ],
+            "extra_in_scraped": [],
+            "match_status": "MISMATCH"
+        },
+        {
+            "product_name": "Minimalist - Vitamin c ethyl ascorbic acid 10 acetyl glucosamine 1",
+            "similarity_score": 0.9411764705882353,
+            "scraped_count": 16,
+            "ground_truth_count": 17,
+            "missing_from_scraped": [
+                "gluconolactone"
+            ],
+            "extra_in_scraped": [],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "I'm from - Rice Toner 30ml",
+            "similarity_score": 0.6842105263157895,
+            "scraped_count": 19,
+            "ground_truth_count": 18,
+            "missing_from_scraped": [
+                "oryza sativa (rice) extract",
+                "hydrogenated poly(c6-14 olefin)",
+                "portulaca oleracea extract",
+                "oryza sativa (rice) bran extract",
+                "ulmus davidiana root extract",
+                "water",
+                "polyglyceryl-10 myristate",
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "rice extract",
+                "hydrogenated poly",
+                "common purslane extract",
+                "rice bran extract",
+                "japanese elm bark extract",
+                "distilled water",
+                "polyglyceryl-10-myristate",
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MISMATCH"
+        },
+        {
+            "product_name": "Haruharu WONDER - Black Rice Hyaluronic Toner 150 ml",
+            "similarity_score": 0.896551724137931,
+            "scraped_count": 29,
+            "ground_truth_count": 27,
+            "missing_from_scraped": [
+                "oryza sativa (rice) extract",
+                "aspergillus ferment extract filtrate",
+                "usnea barbata (lichen) extract",
+                "1,2-hexanediol",
+                "ethanol",
+                "lavandula angustifolia (lavender) oil"
+            ],
+            "extra_in_scraped": [
+                "oryza sativa extract",
+                "aspergillus ferment",
+                "usnea barbata extract",
+                "1",
+                "2-hexanediol",
+                "alcohol",
+                "lavandula angustifolia oil",
+                "limonene"
+            ],
+            "match_status": "PARTIAL"
+        },
+        {
+            "product_name": "SKIN 1004 - Madagascar Centella Toning Toner",
+            "similarity_score": 0.9375,
+            "scraped_count": 16,
+            "ground_truth_count": 15,
+            "missing_from_scraped": [
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Beauty of Joseon - Ginseng Essence Water",
+            "similarity_score": 0.96,
+            "scraped_count": 25,
+            "ground_truth_count": 24,
+            "missing_from_scraped": [
+                "1,2-hexanediol",
+                "theobroma cacao (cocoa) extract"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol",
+                "theobroma cacao extract"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Isntree - Chestnut LHA Jelly Cleansing Oil 150ml",
+            "similarity_score": 0.9642857142857143,
+            "scraped_count": 28,
+            "ground_truth_count": 27,
+            "missing_from_scraped": [
+                "prunus amygdalus dulcis (sweet almond) oil",
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "prunus amygdalus dulcis oil",
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "By Wishtrend - Mandelic Acid 5% Skin Prep Water",
+            "similarity_score": 0.9565217391304348,
+            "scraped_count": 23,
+            "ground_truth_count": 22,
+            "missing_from_scraped": [
+                "glycyrrhiza glabra (licorice) root extract",
+                "prunus amygdalus dulcis (sweet almond) fruit extract",
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "glycyrrhiza glabra root extract",
+                "prunus amygdalus dulcis fruit extract",
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "ONE THING - Niacinamide 10%",
+            "similarity_score": 0.8333333333333334,
+            "scraped_count": 6,
+            "ground_truth_count": 5,
+            "missing_from_scraped": [
+                "1,2-hexanediol"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol"
+            ],
+            "match_status": "PARTIAL"
+        },
+        {
+            "product_name": "Innisfree - Green Tea Seed Hyaluronic cream",
+            "similarity_score": 0.7962962962962963,
+            "scraped_count": 46,
+            "ground_truth_count": 54,
+            "missing_from_scraped": [
+                "1,2-hexanediol",
+                "hydroxyethyl acrylate/sodium acryloyldimethyltaurate copolymer",
+                "triethyl citrate",
+                "limonene",
+                "disodium edta",
+                "citrus limon (lemon) peel oil",
+                "ilex paraguariensis leaf extract",
+                "citral",
+                "theobroma cacao (cocoa) extract",
+                "elettaria cardamomum seed oil",
+                "mentha viridis (spearmint) leaf oil",
+                "linalool",
+                "cymbopogon nardus (citronella) oil",
+                "ferula galbaniflua (galbanum) resin oil"
+            ],
+            "extra_in_scraped": [
+                "eau",
+                "1",
+                "2-hexanediol",
+                "hydroxyethyl acrylate/sodium acryloyldimethyl taurate copolymer",
+                "sodium metaphosphate",
+                "theobroma cacao extract"
+            ],
+            "match_status": "PARTIAL"
+        },
+        {
+            "product_name": "THE FACE SHOP - White Seed Brightening Toner",
+            "similarity_score": 0.8636363636363636,
+            "scraped_count": 22,
+            "ground_truth_count": 21,
+            "missing_from_scraped": [
+                "water",
+                "1,2-hexanediol",
+                "bellis perennis (daisy) flower extract",
+                "salix alba (willow) bark extract",
+                "fragrance"
+            ],
+            "extra_in_scraped": [
+                "water/eau",
+                "1",
+                "2-hexanediol",
+                "bellis perennis flower extract",
+                "salix alba bark extract",
+                "perfume/fragrance"
+            ],
+            "match_status": "PARTIAL"
+        },
+        {
+            "product_name": "TIRTIR - Milk Skin Toner",
+            "similarity_score": 0.9767441860465116,
+            "scraped_count": 43,
+            "ground_truth_count": 42,
+            "missing_from_scraped": [
+                "1,2-hexanediol",
+                "oryza sativa (rice) bran extract",
+                "glycyrrhiza glabra (licorice) root extract",
+                "rosmarinus officinalis (rosemary) leaf extract",
+                "chamomilla recutita (matricaria) flower extract",
+                "hamamelis virginiana (witch hazel) extract",
+                "illicium verum (anise) fruit extract",
+                "olea europaea (olive) leaf extract",
+                "mentha piperita (peppermint) leaf extract",
+                "cynara scolymus (artichoke) leaf extract",
+                "avena sativa (oat) kernel extract"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol",
+                "oryza sativa bran extract",
+                "glycyrrhiza glabra root extract",
+                "rosmarinus officinalis leaf extract",
+                "chamomilla recutita flower extract",
+                "hamamelis virginiana extract",
+                "illicium verum fruit extract",
+                "olea europaea leaf extract",
+                "mentha piperita leaf extract",
+                "cynara scolymus leaf extract",
+                "avena sativa kernel extract"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Foxtale - The Daily Duet Cleanser",
+            "similarity_score": 0.8518518518518519,
+            "scraped_count": 26,
+            "ground_truth_count": 27,
+            "missing_from_scraped": [
+                "aqua",
+                "phenoxyethanol",
+                "ethylhexylglycerin",
+                "octenidine hcl",
+                "1,3 propanediol",
+                "fragrance"
+            ],
+            "extra_in_scraped": [
+                "water",
+                "phenoxyethanol ethylhexylglycerin octenidine hcl",
+                "1",
+                "3 propane diol",
+                "allergen free fragrance"
+            ],
+            "match_status": "PARTIAL"
+        },
+        {
+            "product_name": "First Aid Beauty - Hydrating Serum with Hyaluronic Acid",
+            "similarity_score": 0.9090909090909091,
+            "scraped_count": 22,
+            "ground_truth_count": 21,
+            "missing_from_scraped": [
+                "water",
+                "chrysanthemum parthenium (feverfew) extract",
+                "glycyrrhiza glabra (licorice) root extract"
+            ],
+            "extra_in_scraped": [
+                "aqua (water",
+                "eau)",
+                "chrysanthemum parthenium extract",
+                "glycyrrhiza glabra root extract"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "FAE Beauty - Hydra-Milk",
+            "similarity_score": 0.10416666666666667,
+            "scraped_count": 9,
+            "ground_truth_count": 48,
+            "missing_from_scraped": [
+                "water",
+                "cyclopentasiloxane",
+                "hamamelis virginiana (witch hazel) leaf extract",
+                "polyacrylate-13",
+                "polyisobutene",
+                "polysorbate 20",
+                "betaine",
+                "sodium pca",
+                "sodium lactate",
+                "pca",
+                "serine",
+                "alanine",
+                "glycine",
+                "glutamic acid",
+                "lysine hcl",
+                "threonine",
+                "arginine",
+                "proline",
+                "camellia sinensis (white tea) leaf extract",
+                "glycerin",
+                "artemisia princeps",
+                "sodium benzoate",
+                "potassium sorbate",
+                "phenoxyethanol",
+                "ethylhexylglycerine",
+                "cystoseira tamariscifolia (ranibow algae) extract",
+                "sodium gluconate",
+                "caprylic/capric monoglyceride",
+                "piper nigrum (black pepper) oil",
+                "sophorolipid",
+                "hydrogenated polydecene",
+                "glyceryl stearate",
+                "cetearyl alcohol",
+                "1,2-hexanediol",
+                "hydrogenated lecithin",
+                "ceramide np",
+                "cholesterol",
+                "stearic acid",
+                "ceramide ap",
+                "phytosphingosine",
+                "tetraacetylphytosphingosine",
+                "xanthan gum",
+                "ceramide eop",
+                "glycosphingolipids"
+            ],
+            "extra_in_scraped": [
+                "ceramides",
+                "rainbow algae extract",
+                "white tea extract",
+                "mugwort extract",
+                "witch hazel"
+            ],
+            "match_status": "MISMATCH"
+        },
+        {
+            "product_name": "d'you - In My Defence Moisturiser",
+            "similarity_score": 0.9782608695652174,
+            "scraped_count": 46,
+            "ground_truth_count": 45,
+            "missing_from_scraped": [
+                "1,2-hexanediol",
+                "(-)-alpha-bisabolol",
+                "eclipta prostrata extract ",
+                "curcuma longa (turmeric) root extract"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol",
+                "-alpha-bisabolol",
+                "eclipta prostrata extract",
+                "curcuma longa root extract"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "inde wild - 1% Bakuchiol face Serum",
+            "similarity_score": 1.0,
+            "scraped_count": 14,
+            "ground_truth_count": 14,
+            "missing_from_scraped": [
+                "helianthus annuus (sunflower) seed oil"
+            ],
+            "extra_in_scraped": [
+                "helianthus annuus seed oil"
+            ],
+            "match_status": "MATCH"
+        },
+        {
+            "product_name": "Klairs - Freshly juiced vitamin charging serum",
+            "similarity_score": 0.9615384615384616,
+            "scraped_count": 26,
+            "ground_truth_count": 25,
+            "missing_from_scraped": [
+                "1,2-hexanediol",
+                "citrus limon (lemon) fruit extract",
+                "citrus nobilis (mandarin orange) peel extract",
+                "citrus paradisi (grapefruit) fruit extract"
+            ],
+            "extra_in_scraped": [
+                "1",
+                "2-hexanediol",
+                "citrus limon fruit extract",
+                "citrus nobilis peel extract",
+                "citrus paradisi fruit extract"
+            ],
+            "match_status": "MATCH"
+        }
+    ],
+    "match_percentage": 59.25925925925925,
+    "partial_match_percentage": 22.22222222222222,
+    "mismatch_percentage": 18.51851851851852
+}
