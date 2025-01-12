@@ -236,9 +236,9 @@ def generate_report(results: Dict) -> str:
 
 if __name__ == "__main__":
     # File paths
-    output_file = r"C:\Users\Deva_pg\Downloads\honestly\crawled_products_ingredients_new_3.json"
+    output_file = r"C:\Users\Deva_pg\Downloads\honestly\crawled_products_ingredients_1000_combined.json"
     ground_truth_file = r"C:\Users\Deva_pg\Downloads\honestly\Ingredients_ground_truth.csv"
-    report_file = r"C:\Users\Deva_pg\Downloads\honestly\Ingredients_comparision_report_3.txt"
+    report_file = r"C:\Users\Deva_pg\Downloads\honestly\Ingredients_comparision_report_1000.txt"
     
     # Run comparison
     results = compare_ingredients(output_file, ground_truth_file)

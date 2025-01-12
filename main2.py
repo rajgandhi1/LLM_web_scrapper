@@ -218,18 +218,19 @@ def scrape_and_query(url: str, question: str, brand: str, product: str, variant:
 def format_product_data(ingredients: str, image_urls: List[str], description: str, claims: str, product_info: Dict) -> Dict:
     # Clean up ingredients string
     cleaned_ingredients = ingredients.strip()
-    
+
     try:
         if cleaned_ingredients.startswith('```json'):
             cleaned_ingredients = cleaned_ingredients.replace('```json', '').replace('```', '')
             ingredients_json = json.loads(cleaned_ingredients)
             cleaned_ingredients = ingredients_json.get('ingredients', 'N/A')
-    except:
-        pass
-    
+    except Exception as e:
+        cleaned_ingredients = ingredients.strip()
+
     if "ingredients:" in cleaned_ingredients.lower():
-        cleaned_ingredients = cleaned_ingredients.split("ingredients:", 1)[1]
-    cleaned_ingredients = cleaned_ingredients.strip()
+        cleaned_ingredients = cleaned_ingredients.lower().split("ingredients:", 1)[1].strip()
+    else:
+        cleaned_ingredients = cleaned_ingredients.strip()
 
     # Clean up description and claims
     cleaned_description = clean_llm_response(description)
@@ -243,6 +244,7 @@ def format_product_data(ingredients: str, image_urls: List[str], description: st
         "Product_Images": image_urls if image_urls else [],
         "Product_url": product_info.get('url', 'N/A')
     }
+
     # return {
     #         "Product_Name": product_info.get('product_name', 'N/A'),
     #         "Brand_Name": product_info.get('brand_name', 'N/A'),
@@ -656,9 +658,9 @@ def extract_incidecoder_details(url: str) -> Dict:
         return None
      
 if __name__ == "__main__":
-    csv_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\Products_List_1000.csv"
+    csv_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\Products_List_variants.csv"
     products = read_product_csv(csv_path)
-    output_file_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\crawled_products_ingredients_1000.json"
+    output_file_path = r"C:\\Users\\Deva_pg\\Downloads\\honestly\\crawled_products_ingredients_1000_4.json"
 
     with open(output_file_path, "w") as f:
         json.dump([], f)
